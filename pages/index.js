@@ -35,7 +35,7 @@ export default function Home() {
           }}
         >
           <div className="mb-3">
-            <label for="roomCode" className="form-label">
+            <label htmlFor="roomCode" className="form-label">
               Room code
             </label>
             <input

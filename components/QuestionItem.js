@@ -18,7 +18,7 @@ export default function QuestionItem({
   useEffect(() => {
     if (flipped) onRevealed?.();
     else onHidden?.();
-  }, [flipped]);
+  }, [flipped, onHidden, onRevealed]);
 
   return (
     <ReactCardFlip isFlipped={flipped} flipDirection="vertical">

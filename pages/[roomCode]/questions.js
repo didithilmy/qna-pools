@@ -71,7 +71,7 @@ export default function MagicHatRoom() {
         {!data && !error && <h4>Loading...</h4>}
         <div className="row g-4 mt-3">
           {data?.map((q, i) => (
-            <div className="col-xxl-3 col-lg-4 col-sm-6">
+            <div className="col-xxl-3 col-lg-4 col-sm-6" key={q.id}>
               <QuestionItem
                 question={q}
                 no={i + 1}

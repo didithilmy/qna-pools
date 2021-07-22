@@ -42,7 +42,7 @@ export default function MagicHatRoom() {
           }}
         >
           <div className="mb-3">
-            <label for="name" className="form-label">
+            <label htmlFor="name" className="form-label">
               Your name
             </label>
             <input
@@ -57,7 +57,7 @@ export default function MagicHatRoom() {
             </div>
           </div>
           <div className="mb-3">
-            <label for="question" className="form-label">
+            <label htmlFor="question" className="form-label">
               Your question
             </label>
             <textarea
