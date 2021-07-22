@@ -26,8 +26,6 @@ export default function Home() {
     <div className={styles.container}>
       <Head>
         <title>Summies Magic Hat</title>
-        <meta name="description" content="Summies question-and-answer pools" />
-        <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className={styles.content}>
         <form
@@ -36,26 +34,26 @@ export default function Home() {
             e.preventDefault();
           }}
         >
-          <div class="mb-3">
-            <label for="roomCode" class="form-label">
+          <div className="mb-3">
+            <label for="roomCode" className="form-label">
               Room code
             </label>
             <input
               type="text"
-              class="form-control"
+              className="form-control"
               id="roomCode"
               placeholder="XXXX"
               value={roomCode}
               onChange={(e) => setRoomCode(e.target.value)}
             />
           </div>
-          <div class="d-grid gap-2">
-            <button type="submit" class="btn btn-outline-secondary">
+          <div className="d-grid gap-2">
+            <button type="submit" className="btn btn-outline-secondary">
               Join
             </button>
             <button
               type="button"
-              class="btn btn-outline-primary"
+              className="btn btn-outline-primary"
               onClick={createRoom}
               disabled={loading}
             >

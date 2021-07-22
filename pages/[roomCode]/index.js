@@ -1,3 +1,4 @@
+import Head from "next/head";
 import { useRouter } from "next/router";
 import { useState } from "react";
 import styles from "../../styles/AddQuestion.module.css";
@@ -27,6 +28,9 @@ export default function MagicHatRoom() {
 
   return (
     <div className={styles.container}>
+      <Head>
+        <title>Add a question - Room {roomCode}</title>
+      </Head>
       <div className={styles.content}>
         <h5 className="text-muted">Room {roomCode}</h5>
         <h3>Add a question 🙋</h3>
@@ -37,33 +41,33 @@ export default function MagicHatRoom() {
             e.preventDefault();
           }}
         >
-          <div class="mb-3">
-            <label for="name" class="form-label">
+          <div className="mb-3">
+            <label for="name" className="form-label">
               Your name
             </label>
             <input
               type="text"
-              class="form-control"
+              className="form-control"
               id="name"
               value={name}
               onChange={(e) => setName(e.target.value)}
             />
-            <div id="emailHelp" class="form-text">
+            <div id="emailHelp" className="form-text">
               Just leave it blank if you want to be anonymous 😎
             </div>
           </div>
-          <div class="mb-3">
-            <label for="question" class="form-label">
+          <div className="mb-3">
+            <label for="question" className="form-label">
               Your question
             </label>
             <textarea
-              class="form-control"
+              className="form-control"
               id="question"
               value={question}
               onChange={(e) => setQuestion(e.target.value)}
             />
           </div>
-          <button type="submit" class="btn btn-primary">
+          <button type="submit" className="btn btn-primary">
             Submit
           </button>
         </form>

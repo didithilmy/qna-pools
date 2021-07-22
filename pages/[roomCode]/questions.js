@@ -1,3 +1,4 @@
+import Head from "next/head";
 import { useRouter } from "next/router";
 import useSWR from "swr";
 import QuestionItem from "../../components/QuestionItem";
@@ -59,6 +60,9 @@ export default function MagicHatRoom() {
 
   return (
     <div>
+      <Head>
+        <title>Questions - Room {roomCode}</title>
+      </Head>
       <div className={styles.content}>
         <div>
           <h5 className="text-muted">Room {roomCode}</h5>
