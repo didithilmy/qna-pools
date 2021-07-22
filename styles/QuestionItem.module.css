@@ -1,0 +1,12 @@
+.item {
+  height: 250px;
+  overflow: auto;
+}
+
+.itemLocked {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
