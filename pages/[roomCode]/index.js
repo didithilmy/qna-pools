@@ -9,10 +9,12 @@ export default function MagicHatRoom() {
 
   const [name, setName] = useState();
   const [question, setQuestion] = useState();
+  const [loading, setLoading] = useState();
 
   const addQuestion = () => {
     if (!question) return;
 
+    setLoading(true);
     fetch("/api/add_question", {
       method: "POST",
       headers: {
@@ -23,7 +25,9 @@ export default function MagicHatRoom() {
         name,
         question,
       }),
-    }).then(() => router.push(`/${roomCode}/questions`));
+    })
+      .then(() => router.push(`/${roomCode}/questions`))
+      .finally(() => setLoading(false));
   };
 
   return (
@@ -67,8 +71,9 @@ export default function MagicHatRoom() {
               onChange={(e) => setQuestion(e.target.value)}
             />
           </div>
-          <button type="submit" className="btn btn-primary">
-            Submit
+          <button type="submit" className="btn btn-primary" disabled={loading}>
+            {loading && "Loading"}
+            {!loading && "Submit"}
           </button>
         </form>
       </div>
